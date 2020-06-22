@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fitfusionapp/Models/userInfo.dart';
 
 class DatabaseService {
 
@@ -14,6 +15,24 @@ class DatabaseService {
         'lastName' : lastName,
         'age' : age,
       });
+  }
+
+  // user info list form snapshot
+
+  List<Info> _infoListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc) {
+      return Info(
+        firstName: doc.data['firstName'] ?? '',
+        lastName: doc.data['lastName'] ?? '',
+        age: doc.data['age'] ?? '0'
+      );
+    }).toList();
+  }
+
+  // get user stream
+  Stream<List<Info>> get user {
+    return userInfo.snapshots()
+        .map(_infoListFromSnapshot);
   }
 
 }

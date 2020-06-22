@@ -1,5 +1,9 @@
 import 'package:fitfusionapp/Services/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fitfusionapp/Services/database.dart';
+import 'package:provider/provider.dart';
+import 'package:fitfusionapp/Screens/Home/user_info.dart';
+import 'package:fitfusionapp/Models/userInfo.dart';
 
 class Home extends StatelessWidget {
 
@@ -7,7 +11,9 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return StreamProvider<List<Info>>.value(
+      value: DatabaseService().user,
+      child: Scaffold(
       backgroundColor: Colors.grey,
       appBar: AppBar(
         title: Text('Fit Fusion'),
@@ -22,6 +28,8 @@ class Home extends StatelessWidget {
             },
           )
         ],
+      ),
+      body: UserInfo()
       ),
     );
   }
