@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "497041126261",
+    "firebase_url": "https://fitfusion-1cdd3.firebaseio.com",
+    "project_id": "fitfusion-1cdd3",
+    "storage_bucket": "fitfusion-1cdd3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497041126261:android:578a9837fbef08de2a993c",
+        "android_client_info": {
+          "package_name": "com.fitfuision.fitfusionapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497041126261-2j3jg65sj43nvl0rrb1kvpastshc0s0j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoLfWzNxvuew5hkJmHH1lHGmLxmWN7ibc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497041126261-2j3jg65sj43nvl0rrb1kvpastshc0s0j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

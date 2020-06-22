@@ -1,0 +1,40 @@
+name: fitfusionapp
+description: A fitness and nutrition app.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+  firebase_auth: ^0.16.0
+  cloud_firestore: ^0.13.6
+  provider: ^3.1.0
+  flutter_spinkit: ^4.1.2+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_native_splash: ^0.1.9
+  flutter_launcher_icons: ^0.7.5
+
+flutter_icons:
+  image_path: "assets/images/logoSmall.png"
+  android: true
+  ios: true
+
+flutter_native_splash:
+  image: "assets/images/logoSmall.png"
+  color: "#000000"
+  android: true
+  ios: true
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/logoSmall.png
+    - assets/images/logoLarge.png
+
