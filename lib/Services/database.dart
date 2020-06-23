@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fitfusionapp/Models/userInfo.dart';
+import 'package:fitfusionapp/Models/user.dart';
 
 class DatabaseService {
 
@@ -28,10 +29,25 @@ class DatabaseService {
     }).toList();
   }
 
+  // userData from snapshot
+  UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
+    return UserData(
+      uid: uid,
+      firstName: snapshot.data['firstName'],
+      lastName: snapshot.data['lastName'],
+      age: snapshot.data['age'],
+    );
+  }
+
   // get user stream
   Stream<List<Info>> get user {
     return userInfo.snapshots()
         .map(_infoListFromSnapshot);
   }
 
+  // get user doc stream
+  Stream<UserData> get userData{
+    return userInfo.document(uid).snapshots()
+        .map(_userDataFromSnapshot);
+  }
 }
