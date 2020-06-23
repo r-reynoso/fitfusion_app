@@ -4,7 +4,7 @@ import 'package:fitfusionapp/Models/userInfo.dart';
 class DatabaseService {
 
   final String uid;
-  DatabaseService({ this.uid});
+  DatabaseService({this.uid});
 
   // collection reference
   final CollectionReference userInfo= Firestore.instance.collection('userlInfo');
@@ -18,7 +18,6 @@ class DatabaseService {
   }
 
   // user info list form snapshot
-
   List<Info> _infoListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {
       return Info(
