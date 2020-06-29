@@ -12,7 +12,7 @@ class _UserInfoState extends State<UserInfo> {
   @override
   Widget build(BuildContext context) {
 
-    final info = Provider.of<List<Info>>(context);
+    final info = Provider.of<List<Info>>(context) ?? [];
 
     return ListView.builder(
         itemCount: info.length,

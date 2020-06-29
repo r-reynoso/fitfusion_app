@@ -16,6 +16,7 @@ class InfoTile extends StatelessWidget {
           leading: CircleAvatar(
             radius: 25.0,
             backgroundColor: Colors.grey,
+            backgroundImage: AssetImage('assets/images/logoSmall.png'),
           ),
           title: Text(info.firstName),
           subtitle: Text('Takes ${info.age} age(a)'),
