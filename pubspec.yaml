@@ -13,6 +13,7 @@ dependencies:
   cloud_firestore: ^0.13.6
   provider: ^3.1.0
   flutter_spinkit: ^4.1.2+1
+  flutter_webview_plugin: ^0.3.10+1
 
 dev_dependencies:
   flutter_test:
@@ -21,13 +22,13 @@ dev_dependencies:
   flutter_launcher_icons: ^0.7.5
 
 flutter_icons:
-  image_path: "assets/images/logoSmall.png"
+  image_path: "assets/images/logoSmallWhite.png"
   android: true
   ios: true
 
 flutter_native_splash:
-  image: "assets/images/logoSmall.png"
-  color: "#000000"
+  image: "assets/images/logoSmallWhite.png"
+  color: "#ffffff"
   android: true
   ios: true
 
@@ -37,4 +38,5 @@ flutter:
   assets:
     - assets/images/logoSmall.png
     - assets/images/logoLarge.png
+    - assets/images/logoSmallWhite.png
 

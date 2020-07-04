@@ -19,6 +19,7 @@ class _SettingsFormState extends State<SettingsForm> {
   String _currentFirstName;
   String _currentLastName;
   int _currentAge;
+  int _currentWeight;
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +93,8 @@ class _SettingsFormState extends State<SettingsForm> {
                       await DatabaseService(uid: user.uid).updateUserData(
                         _currentFirstName ?? userData.firstName,
                         _currentLastName ?? userData.lastName,
-                        _currentAge ?? userData.age
+                        _currentAge ?? userData.age,
+                        _currentWeight ?? userData.weight
                       );
                       Navigator.pop(context);
                     }

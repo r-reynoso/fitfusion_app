@@ -12,6 +12,7 @@ class UserData {
   final String firstName;
   final String lastName;
   final int age;
+  final int weight;
 
-  UserData ({this.uid, this.firstName, this.lastName, this.age});
+  UserData ({this.uid, this.firstName, this.lastName, this.age, this.weight});
 }
