@@ -2,8 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitfusionapp/Models/user.dart';
 import 'package:fitfusionapp/Services/database.dart';
 
-
-
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   String _results = '';
@@ -33,7 +31,10 @@ class AuthService {
           _results = "Email or Password is incorrect. Please try again.";
           break;
         case "ERROR_INVALID_EMAIL":
-          _results = "Invalid Email. Please try again.";
+          _results = "Invalid email. Please try again.";
+          break;
+        case "ERROR_USER_NOT_FOUND":
+          _results = "No user found with this email. Try register.";
           break;
         case "ERROR_USER_DISABLED":
           _results =
@@ -57,7 +58,7 @@ class AuthService {
 
       // create a new document for the user with the uid
       await DatabaseService(uid: user.uid)
-          .updateUserData('new first name', 'new last name', 0, 0);
+          .updateUserData('', '', 0, 0, 0, 0);
       return _userFromFirebaseUser(user);
     } catch (e) {
       _results = e.code;
