@@ -8,8 +8,6 @@ import 'package:fitfusionapp/Screens/Home/user_info.dart';
 import 'package:fitfusionapp/Models/userInfo.dart';
 import 'package:fitfusionapp/Shared/constants.dart';
 
-
-
 class Home extends StatelessWidget {
   final AuthService _auth = AuthService();
 
@@ -43,9 +41,7 @@ class Home extends StatelessWidget {
               )
             ],
           ),
-          body: Center(
-            child: UserInfo()
-          ),
+          body: Center(child: UserInfo()),
           bottomNavigationBar: BottomAppBar(
             shape: const CircularNotchedRectangle(),
             child: Container(
@@ -54,7 +50,8 @@ class Home extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     IconButton(
-                      icon: Icon(Icons.keyboard_arrow_right, color: Colors.black),
+                      icon:
+                          Icon(Icons.keyboard_arrow_right, color: Colors.black),
                       iconSize: 40,
                       onPressed: () {
                         print('Exercise');
@@ -66,8 +63,7 @@ class Home extends StatelessWidget {
                       textColor: Colors.white,
                       child: Text(
                         'Exercise',
-                        style:
-                            TextStyle(color: Colors.black, fontSize: 20),
+                        style: TextStyle(color: Colors.black, fontSize: 20),
                       ),
                       onPressed: () {
                         print('Exercise');
@@ -80,16 +76,15 @@ class Home extends StatelessWidget {
                       textColor: Colors.white,
                       child: Text(
                         'Diet',
-                        style:
-                            TextStyle(color: Colors.black, fontSize: 20),
+                        style: TextStyle(color: Colors.black, fontSize: 20),
                       ),
                       onPressed: () {
                         print('Diet');
                       },
                     ),
-
                     IconButton(
-                      icon: Icon(Icons.keyboard_arrow_left, color: Colors.black),
+                      icon:
+                          Icon(Icons.keyboard_arrow_left, color: Colors.black),
                       iconSize: 40,
                       onPressed: () {
                         print('Diet');

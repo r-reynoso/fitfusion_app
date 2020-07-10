@@ -29,7 +29,8 @@ class _InfoTileState extends State<InfoTile> {
 
   Future uploadPic(BuildContext context) async {
     String fileName = basename(_image.path);
-    StorageReference firebaseStorageRef = FirebaseStorage.instance.ref().child(fileName);
+    StorageReference firebaseStorageRef =
+        FirebaseStorage.instance.ref().child(fileName);
     StorageUploadTask uploadTask = firebaseStorageRef.putFile(_image);
     StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
     setState(() {
@@ -38,8 +39,6 @@ class _InfoTileState extends State<InfoTile> {
           .showSnackBar(SnackBar(content: Text('Profile picture uploaded.')));
     });
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -78,8 +77,8 @@ class _InfoTileState extends State<InfoTile> {
         Padding(
           padding: EdgeInsets.only(top: 0),
           child: IconButton(
-            icon: Icon(FontAwesomeIcons.save,
-                size: 20, color: Colors.deepOrange),
+            icon:
+                Icon(FontAwesomeIcons.save, size: 20, color: Colors.deepOrange),
             onPressed: () {
               uploadPic(context);
             },
