@@ -11,6 +11,12 @@ class DatabaseService {
   final CollectionReference userInfo =
       Firestore.instance.collection('userInfo');
 
+  final CollectionReference userExercise =
+      Firestore.instance.collection('userExercise');
+
+  final CollectionReference userDiet =
+      Firestore.instance.collection('userDiet');
+
   Future updateUserData(String firstName, String lastName, int age, int weight,
       int feet, int inches) async {
     return await userInfo.document(uid).setData({
@@ -23,13 +29,54 @@ class DatabaseService {
     });
   }
 
+  Future updateUserExercise(
+      String mondayExercise,
+      String tuesdayExercise,
+      String wednesdayExercise,
+      String thursdayExercise,
+      String fridayExercise,
+      String saturdayExercise,
+      String sundayExercise) async {
+    return await userExercise.document(uid).setData({
+      'mondayExercise': mondayExercise,
+      'tuesdayExercise': tuesdayExercise,
+      'wednesdayExercise': wednesdayExercise,
+      'thursdayExercise': thursdayExercise,
+      'fridayExercise': fridayExercise,
+      'saturdayExercise': saturdayExercise,
+      'sundayExercise': sundayExercise,
+    });
+  }
+
+  Future updateUserDiet(
+      String mondayDiet,
+      String tuesdayDiet,
+      String wednesdayDiet,
+      String thursdayDiet,
+      String fridayDiet,
+      String saturdayDiet,
+      String sundayDiet) async {
+    return await userDiet.document(uid).setData({
+      'mondayExercise': mondayDiet,
+      'tuesdayExercise': tuesdayDiet,
+      'wednesdayExercise': wednesdayDiet,
+      'thursdayExercise': thursdayDiet,
+      'fridayExercise': fridayDiet,
+      'saturdayExercise': saturdayDiet,
+      'sundayExercise': sundayDiet,
+    });
+  }
+
   // user info list form snapshot
   List<Info> _infoListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {
       return Info(
           firstName: doc.data['firstName'] ?? '',
           lastName: doc.data['lastName'] ?? '',
-          age: doc.data['age'] ?? '0');
+          age: doc.data['age'] ?? '0',
+          weight: doc.data['weight'] ?? '0',
+          feet: doc.data['feet'] ?? '0',
+          inches: doc.data['inches'] ?? '0');
     }).toList();
   }
 

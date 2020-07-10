@@ -15,11 +15,10 @@ class _UserInfoState extends State<UserInfo> {
     final info = Provider.of<List<Info>>(context) ?? [];
 
     return ListView.builder(
-        itemCount: info.length,
-        itemBuilder: (context, index) {
-          return InfoTile(info: info[index]);
-        },
+      itemCount: info.length,
+      itemBuilder: (context, index) {
+        return InfoTile(info: info[index]);
+      },
     );
-
   }
 }

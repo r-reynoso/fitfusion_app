@@ -39,7 +39,6 @@ class _SettingsFormState extends State<SettingsForm> {
               key: _formKey,
               child: Column(
                 children: <Widget>[
-                  SizedBox(height: 10.0),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Container(
@@ -92,6 +91,7 @@ class _SettingsFormState extends State<SettingsForm> {
                         val.isEmpty ? 'Please enter your last name.' : null,
                     onChanged: (val) => setState(() => _currentLastName = val),
                   ),
+
                   SizedBox(height: 20.0),
                   Align(
                     alignment: Alignment.centerLeft,

@@ -87,8 +87,9 @@ class _SignInState extends State<SignIn> {
                     TextFormField(
                       autofocus: false,
                       keyboardType: TextInputType.emailAddress,
-                      decoration:
-                          textInputDecoration.copyWith(labelText: 'Enter email', labelStyle: TextStyle(color: Colors.black)),
+                      decoration: textInputDecoration.copyWith(
+                          labelText: 'Enter email',
+                          labelStyle: TextStyle(color: Colors.black)),
                       validator: (val) => val.isEmpty ? 'Enter a email.' : null,
                       onChanged: (val) {
                         setState(() => email = val);
@@ -108,8 +109,9 @@ class _SignInState extends State<SignIn> {
                     SizedBox(height: 10.0),
                     TextFormField(
                         autofocus: false,
-                        decoration:
-                            textInputDecoration.copyWith(labelText: 'Enter password',labelStyle: TextStyle(color: Colors.black)),
+                        decoration: textInputDecoration.copyWith(
+                            labelText: 'Enter password',
+                            labelStyle: TextStyle(color: Colors.black)),
                         validator: (val) =>
                             val.length < 6 ? 'Minimum 6 char long.' : null,
                         obscureText: true,
@@ -123,7 +125,7 @@ class _SignInState extends State<SignIn> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
                       child: RaisedButton(
-                        color: Colors.black,
+                        color: Colors.deepOrange,
                         child: Text(
                           'Login',
                           style: TextStyle(color: Colors.white, fontSize: 20),
@@ -150,7 +152,7 @@ class _SignInState extends State<SignIn> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
                       child: RaisedButton(
-                        color: Colors.deepOrange,
+                        color: Colors.black,
                         child: Text(
                           'Register',
                           style: TextStyle(color: Colors.white, fontSize: 20),

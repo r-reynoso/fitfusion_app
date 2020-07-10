@@ -6,6 +6,9 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:fitfusionapp/Screens/Home/user_info.dart';
 import 'package:fitfusionapp/Models/userInfo.dart';
+import 'package:fitfusionapp/Shared/constants.dart';
+
+
 
 class Home extends StatelessWidget {
   final AuthService _auth = AuthService();
@@ -27,7 +30,7 @@ class Home extends StatelessWidget {
         child: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
-            title: Text('Fit Fusion'),
+            title: Text('FitFusion'),
             backgroundColor: Colors.black,
             elevation: 0.0,
             actions: <Widget>[
@@ -35,22 +38,23 @@ class Home extends StatelessWidget {
                 icon: Icon(Icons.exit_to_app, color: Colors.white),
                 label: Text(''),
                 onPressed: () async {
-                  await _auth.signOut();
+                  asyncConfirmDialog(context);
                 },
               )
             ],
           ),
-          body: Center(),
+          body: Center(
+            child: UserInfo()
+          ),
           bottomNavigationBar: BottomAppBar(
             shape: const CircularNotchedRectangle(),
             child: Container(
               height: 60,
               child: new Row(
-                  //mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     IconButton(
-                      icon: Icon(Icons.keyboard_arrow_right),
+                      icon: Icon(Icons.keyboard_arrow_right, color: Colors.black),
                       iconSize: 40,
                       onPressed: () {
                         print('Exercise');
@@ -63,12 +67,13 @@ class Home extends StatelessWidget {
                       child: Text(
                         'Exercise',
                         style:
-                            TextStyle(color: Colors.deepOrange, fontSize: 20),
+                            TextStyle(color: Colors.black, fontSize: 20),
                       ),
                       onPressed: () {
                         print('Exercise');
                       },
                     ),
+                    Spacer(),
                     RaisedButton(
                       color: Colors.white,
                       elevation: 0,
@@ -76,14 +81,15 @@ class Home extends StatelessWidget {
                       child: Text(
                         'Diet',
                         style:
-                            TextStyle(color: Colors.deepOrange, fontSize: 20),
+                            TextStyle(color: Colors.black, fontSize: 20),
                       ),
                       onPressed: () {
-                        print('Exercise');
+                        print('Diet');
                       },
                     ),
+
                     IconButton(
-                      icon: Icon(Icons.keyboard_arrow_left),
+                      icon: Icon(Icons.keyboard_arrow_left, color: Colors.black),
                       iconSize: 40,
                       onPressed: () {
                         print('Diet');

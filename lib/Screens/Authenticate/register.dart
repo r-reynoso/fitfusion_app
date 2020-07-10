@@ -110,7 +110,7 @@ class _RegisterState extends State<Register> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
                       child: RaisedButton(
-                        color: Colors.black,
+                        color: Colors.deepOrange,
                         child: Text(
                           'Register',
                           style: TextStyle(color: Colors.white, fontSize: 20),
@@ -137,7 +137,7 @@ class _RegisterState extends State<Register> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
                       child: RaisedButton(
-                        color: Colors.deepOrange,
+                        color: Colors.black,
                         child: Text(
                           'Back to Login',
                           style: TextStyle(color: Colors.white, fontSize: 20),
