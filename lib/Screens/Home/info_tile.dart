@@ -18,9 +18,10 @@ class InfoTile extends StatefulWidget {
 class _InfoTileState extends State<InfoTile> {
   File _image;
   final _picker = ImagePicker();
+  double size = 20.0;
 
   Future getImage() async {
-    final pickedFile = await _picker.getImage(source: ImageSource.camera);
+    final pickedFile = await _picker.getImage(source: ImageSource.gallery);
     setState(() {
       _image = File(pickedFile.path);
       print('Image Path $_image');
@@ -57,8 +58,8 @@ class _InfoTileState extends State<InfoTile> {
                   height: 150.0,
                   child: (_image != null)
                       ? Image.file(_image, fit: BoxFit.cover)
-                      : Image.asset('assets/images/logoSmallWhite.png',
-                          fit: BoxFit.fill)),
+                      : Image.asset('assets/images/logoLarge.png',
+                          fit: BoxFit.contain)),
             ),
           ),
         ),
@@ -95,7 +96,7 @@ class _InfoTileState extends State<InfoTile> {
                   child: Text(
                     'Name:',
                     style: TextStyle(
-                        fontSize: 30.0, fontWeight: FontWeight.normal),
+                        fontSize: size, fontWeight: FontWeight.normal),
                   ),
                 ),
               ),
@@ -108,7 +109,7 @@ class _InfoTileState extends State<InfoTile> {
                   child: Text(
                     widget.info.firstName,
                     style: TextStyle(
-                        fontSize: 30.0, fontWeight: FontWeight.normal),
+                        fontSize: size, fontWeight: FontWeight.normal),
                   ),
                 ),
               ),
@@ -121,7 +122,7 @@ class _InfoTileState extends State<InfoTile> {
                   child: Text(
                     widget.info.lastName,
                     style: TextStyle(
-                        fontSize: 30.0, fontWeight: FontWeight.normal),
+                        fontSize: size, fontWeight: FontWeight.normal),
                   ),
                 ),
               ),
@@ -138,7 +139,7 @@ class _InfoTileState extends State<InfoTile> {
                   child: Text(
                     'Age:',
                     style: TextStyle(
-                        fontSize: 30.0, fontWeight: FontWeight.normal),
+                        fontSize: size, fontWeight: FontWeight.normal),
                   ),
                 ),
               ),
@@ -151,7 +152,7 @@ class _InfoTileState extends State<InfoTile> {
                   child: Text(
                     '${widget.info.age}',
                     style: TextStyle(
-                        fontSize: 30.0, fontWeight: FontWeight.normal),
+                        fontSize: size, fontWeight: FontWeight.normal),
                   ),
                 ),
               ),
@@ -168,7 +169,7 @@ class _InfoTileState extends State<InfoTile> {
                   child: Text(
                     'Weight:',
                     style: TextStyle(
-                        fontSize: 30.0, fontWeight: FontWeight.normal),
+                        fontSize: size, fontWeight: FontWeight.normal),
                   ),
                 ),
               ),
@@ -181,7 +182,7 @@ class _InfoTileState extends State<InfoTile> {
                   child: Text(
                     '${widget.info.weight} lbs',
                     style: TextStyle(
-                        fontSize: 30.0, fontWeight: FontWeight.normal),
+                        fontSize: size, fontWeight: FontWeight.normal),
                   ),
                 ),
               ),
@@ -198,7 +199,7 @@ class _InfoTileState extends State<InfoTile> {
                   child: Text(
                     'Height:',
                     style: TextStyle(
-                        fontSize: 30.0, fontWeight: FontWeight.normal),
+                        fontSize: size, fontWeight: FontWeight.normal),
                   ),
                 ),
               ),
@@ -211,7 +212,7 @@ class _InfoTileState extends State<InfoTile> {
                   child: Text(
                     '${widget.info.feet} feet  ${widget.info.inches} inches',
                     style: TextStyle(
-                        fontSize: 30.0, fontWeight: FontWeight.normal),
+                        fontSize: size, fontWeight: FontWeight.normal),
                   ),
                 ),
               ),

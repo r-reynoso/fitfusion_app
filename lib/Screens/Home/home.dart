@@ -28,7 +28,7 @@ class Home extends StatelessWidget {
         child: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
-            title: Text('FitFusion'),
+            title: Text(''),
             backgroundColor: Colors.black,
             elevation: 0.0,
             actions: <Widget>[

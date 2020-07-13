@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>497041126261-9i7ko7blifh5kpvcns1qr4lf2k4hqok1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.497041126261-9i7ko7blifh5kpvcns1qr4lf2k4hqok1</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>497041126261-b8guvcefpai9s3fjjehv1n4kcal7c3fc.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCfU1WuOUfSFHmpHjnXsJuYfUgwFunt1RI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>497041126261</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.fitfuision.fitfusionapp</string>
+	<key>PROJECT_ID</key>
+	<string>fitfusion-1cdd3</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fitfusion-1cdd3.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:497041126261:ios:8619684ee5990cfc2a993c</string>
+	<key>DATABASE_URL</key>
+	<string>https://fitfusion-1cdd3.firebaseio.com</string>
+</dict>
+</plist>

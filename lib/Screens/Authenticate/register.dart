@@ -2,6 +2,11 @@ import 'package:fitfusionapp/Services/auth.dart';
 import 'package:fitfusionapp/Shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:fitfusionapp/Shared/constants.dart';
+import 'package:fitfusionapp/Screens/Webview/Webview.dart';
+
+Future navigateToWebwiew(context) async {
+  Navigator.push(context, MaterialPageRoute(builder: (context) => Webwiew()));
+}
 
 class Register extends StatefulWidget {
   final Function toggleView;
@@ -32,6 +37,15 @@ class _RegisterState extends State<Register> {
             appBar: AppBar(
               backgroundColor: Colors.white,
               elevation: 0.0,
+              actions: <Widget>[
+                FlatButton.icon(
+                  icon: Icon(Icons.help, color: Colors.deepOrange),
+                  label: Text(''),
+                  onPressed: () {
+                    navigateToWebwiew(context);
+                  },
+                )
+              ],
             ),
             body: SingleChildScrollView(
               padding: EdgeInsets.all(30),
