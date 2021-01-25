@@ -41,7 +41,9 @@ class Home extends StatelessWidget {
               )
             ],
           ),
+
           body: Center(child: UserInfo()),
+
           bottomNavigationBar: BottomAppBar(
             shape: const CircularNotchedRectangle(),
             child: Container(
@@ -106,6 +108,7 @@ class Home extends StatelessWidget {
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
           //body: Container(child: UserInfo())),
-        ));
+        )
+    );
   }
 }

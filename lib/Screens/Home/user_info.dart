@@ -1,3 +1,4 @@
+import 'package:fitfusionapp/Models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:fitfusionapp/Models/userInfo.dart';
@@ -10,15 +11,17 @@ class UserInfo extends StatefulWidget {
 
 class _UserInfoState extends State<UserInfo> {
   @override
-  Widget build(BuildContext context) {
+Widget build(BuildContext context) {
 
-    final info = Provider.of<List<Info>>(context) ?? [];
+  final info = Provider.of<List<Info>>(context) ?? [];
 
-    return ListView.builder(
-      itemCount: info.length,
-      itemBuilder: (context, index) {
-        return InfoTile(info: info[index]);
-      },
-    );
-  }
+  return ListView.builder(
+    itemCount: info.length,
+    itemBuilder: (context, index)
+    {
+      return InfoTile(info: info[0]);
+    },
+  );
+}
+
 }

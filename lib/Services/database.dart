@@ -105,4 +105,5 @@ class DatabaseService {
   Stream<UserData> get userData {
     return userInfo.document(uid).snapshots().map(_userDataFromSnapshot);
   }
+
 }
