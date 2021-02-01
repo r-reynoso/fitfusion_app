@@ -39,7 +39,7 @@ class _RegisterState extends State<Register> {
               elevation: 0.0,
               actions: <Widget>[
                 FlatButton.icon(
-                  icon: Icon(Icons.help, color: Colors.deepOrange),
+                  icon: Icon(Icons.help, color: Color.fromARGB(255, 69, 83, 100)),
                   label: Text(''),
                   onPressed: () {
                     navigateToWebwiew(context);
@@ -124,7 +124,7 @@ class _RegisterState extends State<Register> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
                       child: RaisedButton(
-                        color: Colors.deepOrange,
+                        color: Color.fromARGB(255, 47, 150, 153),
                         child: Text(
                           'Register',
                           style: TextStyle(color: Colors.white, fontSize: 20),

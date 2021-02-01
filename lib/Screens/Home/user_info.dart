@@ -11,17 +11,14 @@ class UserInfo extends StatefulWidget {
 
 class _UserInfoState extends State<UserInfo> {
   @override
-Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
+    final info = Provider.of<List<Info>>(context) ?? [];
 
-  final info = Provider.of<List<Info>>(context) ?? [];
-
-  return ListView.builder(
-    itemCount: info.length,
-    itemBuilder: (context, index)
-    {
-      return InfoTile(info: info[0]);
-    },
-  );
-}
-
+    return ListView.builder(
+      itemCount: info.length,
+      itemBuilder: (context, index) {
+        return InfoTile(info: info[0]);
+      },
+    );
+  }
 }

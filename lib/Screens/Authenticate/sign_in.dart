@@ -40,7 +40,7 @@ class _SignInState extends State<SignIn> {
               elevation: 0.0,
               actions: <Widget>[
                 FlatButton.icon(
-                  icon: Icon(Icons.help, color: Colors.deepOrange),
+                  icon: Icon(Icons.help, color: Color.fromARGB(255, 69, 83, 100)),
                   label: Text(''),
                   onPressed: () {
                     navigateToWebwiew(context);
@@ -125,7 +125,7 @@ class _SignInState extends State<SignIn> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
                       child: RaisedButton(
-                        color: Colors.deepOrange,
+                        color: Color.fromARGB(255, 47, 150, 153),
                         child: Text(
                           'Login',
                           style: TextStyle(color: Colors.white, fontSize: 20),

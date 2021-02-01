@@ -16,7 +16,7 @@ class _WebwiewState extends State<Webwiew> {
         ),
         body: Center(
           child: WebviewScaffold(
-            url: "http://www.fitfusionpr.com/",
+            url: "http://www.rayaera.net/",
           ),
         ));
   }

@@ -108,7 +108,6 @@ class Home extends StatelessWidget {
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
           //body: Container(child: UserInfo())),
-        )
-    );
+        ));
   }
 }
