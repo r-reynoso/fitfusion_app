@@ -31,12 +31,9 @@ class _SettingsFormState extends State<SettingsForm> {
 
   @override
   Widget build(BuildContext context) {
-
-    GestureDetector(
-        onHorizontalDragDown: (DragDownDetails details) {
-          SystemChrome.setPreferredOrientations([]);
-        }
-    );
+    GestureDetector(onHorizontalDragDown: (DragDownDetails details) {
+      SystemChrome.setPreferredOrientations([]);
+    });
 
     final user = Provider.of<User>(context);
 
@@ -152,7 +149,8 @@ class _SettingsFormState extends State<SettingsForm> {
                               child: Text('$weight'),
                             );
                           }).toList(),
-                          onChanged: (val) => setState(() => _currentWeight = val),
+                          onChanged: (val) =>
+                              setState(() => _currentWeight = val),
                         ),
                       ),
                     ],
@@ -180,7 +178,8 @@ class _SettingsFormState extends State<SettingsForm> {
                               child: Text('$gender'),
                             );
                           }).toList(),
-                          onChanged: (val) => setState(() => _currentGender = val),
+                          onChanged: (val) =>
+                              setState(() => _currentGender = val),
                         ),
                       ),
                     ],
@@ -239,7 +238,7 @@ class _SettingsFormState extends State<SettingsForm> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
                       child: RaisedButton(
-                        color: Colors.deepOrange,
+                        color: Color.fromARGB(255, 47, 150, 153),
                         child: Text(
                           'Update',
                           style: TextStyle(color: Colors.white, fontSize: 20),
@@ -266,7 +265,6 @@ class _SettingsFormState extends State<SettingsForm> {
           } else {
             return Loading();
           }
-        }
-        );
+        });
   }
 }

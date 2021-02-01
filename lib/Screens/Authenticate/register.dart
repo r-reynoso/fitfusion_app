@@ -39,7 +39,7 @@ class _RegisterState extends State<Register> {
               elevation: 0.0,
               actions: <Widget>[
                 FlatButton.icon(
-                  icon: Icon(Icons.help, color: Color.fromARGB(255, 69, 83, 100)),
+                  icon: Icon(Icons.help, color: Color.fromARGB(255, 47, 150, 153)),
                   label: Text(''),
                   onPressed: () {
                     navigateToWebwiew(context);

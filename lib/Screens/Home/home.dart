@@ -33,7 +33,7 @@ class Home extends StatelessWidget {
             elevation: 0.0,
             actions: <Widget>[
               FlatButton.icon(
-                icon: Icon(Icons.exit_to_app, color: Colors.white),
+                icon: Icon(Icons.exit_to_app, color: Color.fromARGB(255, 47, 150, 153)),
                 label: Text(''),
                 onPressed: () async {
                   asyncConfirmDialog(context);
@@ -96,7 +96,7 @@ class Home extends StatelessWidget {
             ),
           ),
           floatingActionButton: FloatingActionButton(
-            backgroundColor: Colors.deepOrange,
+            backgroundColor: Color.fromARGB(255, 47, 150, 153),
             onPressed: () {
               _showSettingsPanel();
               SystemChrome.setPreferredOrientations(

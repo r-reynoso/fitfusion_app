@@ -45,17 +45,17 @@ class _InfoTileState extends State<InfoTile> {
   Widget build(BuildContext context) {
     return Container(
         child: Column(
-          children: <Widget>[
-            SizedBox(height: 50),
-            Align(
-              alignment: Alignment.center,
-              child: CircleAvatar(
-                radius: 85,
-                backgroundColor: Colors.black,
-                child: ClipOval(
-                  child: SizedBox(
-                      child: Image.asset('assets/images/logoSmall.png',
-                          fit: BoxFit.contain)
+      children: <Widget>[
+        SizedBox(height: 50),
+        Align(
+          alignment: Alignment.center,
+          child: CircleAvatar(
+            radius: 85,
+            backgroundColor: Colors.black,
+            child: ClipOval(
+              child: SizedBox(
+                  child: Image.asset('assets/images/logoSmall.png',
+                      fit: BoxFit.contain)
 //                  width: 150.0,
 //                  height: 150.0,
 //                  child: (_image != null)
@@ -63,9 +63,9 @@ class _InfoTileState extends State<InfoTile> {
 //                      : Image.asset('assets/images/logoLarge.png',
 //                          fit: BoxFit.contain)
                   ),
-                ),
-              ),
             ),
+          ),
+        ),
 //        Padding(
 //          padding: EdgeInsets.only(top: 0),
 //          child: IconButton(
@@ -77,7 +77,7 @@ class _InfoTileState extends State<InfoTile> {
 //            },
 //          ),
 //        ),
-            SizedBox(height: 20.0),
+        SizedBox(height: 20.0),
 //        Padding(
 //          padding: EdgeInsets.only(top: 0),
 //          child: IconButton(
@@ -88,172 +88,171 @@ class _InfoTileState extends State<InfoTile> {
 //            },
 //          ),
 //        ),
-            SizedBox(height: 20.0),
-            Row(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      child: Text(
-                        'Name:',
-                        style: TextStyle(
-                            fontSize: size, fontWeight: FontWeight.normal),
-                      ),
-                    ),
+        SizedBox(height: 20.0),
+        Row(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  child: Text(
+                    'Name:',
+                    style: TextStyle(
+                        fontSize: size, fontWeight: FontWeight.normal),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.all(00),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      child: Text(
-                        widget.info.firstName,
-                        style: TextStyle(
-                            fontSize: size, fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      child: Text(
-                        widget.info.lastName,
-                        style: TextStyle(
-                            fontSize: size, fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
-            Row(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      child: Text(
-                        'Gender:',
-                        style: TextStyle(
-                            fontSize: size, fontWeight: FontWeight.normal),
-                      ),
-                    ),
+            Padding(
+              padding: EdgeInsets.all(00),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  child: Text(
+                    widget.info.firstName,
+                    style: TextStyle(
+                        fontSize: size, fontWeight: FontWeight.normal),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.all(00),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      child: Text(
-                        widget.info.gender,
-                        style: TextStyle(
-                            fontSize: size, fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
-            Row(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      child: Text(
-                        'Age:',
-                        style: TextStyle(
-                            fontSize: size, fontWeight: FontWeight.normal),
-                      ),
-                    ),
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  child: Text(
+                    widget.info.lastName,
+                    style: TextStyle(
+                        fontSize: size, fontWeight: FontWeight.normal),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.all(00),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      child: Text(
-                        '${widget.info.age}',
-                        style: TextStyle(
-                            fontSize: size, fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
-            Row(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      child: Text(
-                        'Weight:',
-                        style: TextStyle(
-                            fontSize: size, fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(00),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      child: Text(
-                        '${widget.info.weight} lbs',
-                        style: TextStyle(
-                            fontSize: size, fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      child: Text(
-                        'Height:',
-                        style: TextStyle(
-                            fontSize: size, fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(00),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      child: Text(
-                        '${widget.info.feet} feet  ${widget.info
-                            .inches} inches',
-                        style: TextStyle(
-                            fontSize: size, fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            )
           ],
-        ));
+        ),
+        Row(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  child: Text(
+                    'Gender:',
+                    style: TextStyle(
+                        fontSize: size, fontWeight: FontWeight.normal),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(00),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  child: Text(
+                    widget.info.gender,
+                    style: TextStyle(
+                        fontSize: size, fontWeight: FontWeight.normal),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  child: Text(
+                    'Age:',
+                    style: TextStyle(
+                        fontSize: size, fontWeight: FontWeight.normal),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(00),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  child: Text(
+                    '${widget.info.age}',
+                    style: TextStyle(
+                        fontSize: size, fontWeight: FontWeight.normal),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  child: Text(
+                    'Weight:',
+                    style: TextStyle(
+                        fontSize: size, fontWeight: FontWeight.normal),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(00),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  child: Text(
+                    '${widget.info.weight} lbs',
+                    style: TextStyle(
+                        fontSize: size, fontWeight: FontWeight.normal),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  child: Text(
+                    'Height:',
+                    style: TextStyle(
+                        fontSize: size, fontWeight: FontWeight.normal),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(00),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  child: Text(
+                    '${widget.info.feet} feet  ${widget.info.inches} inches',
+                    style: TextStyle(
+                        fontSize: size, fontWeight: FontWeight.normal),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        )
+      ],
+    ));
   }
 }
