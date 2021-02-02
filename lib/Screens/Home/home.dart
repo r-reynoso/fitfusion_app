@@ -9,7 +9,7 @@ import 'package:fitfusionapp/Models/userInfo.dart';
 import 'package:fitfusionapp/Shared/constants.dart';
 
 class Home extends StatelessWidget {
-  final AuthService _auth = AuthService();
+  //final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
