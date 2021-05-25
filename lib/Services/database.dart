@@ -58,13 +58,13 @@ class DatabaseService {
       String saturdayDiet,
       String sundayDiet) async {
     return await userDiet.document(uid).setData({
-      'mondayExercise': mondayDiet,
-      'tuesdayExercise': tuesdayDiet,
-      'wednesdayExercise': wednesdayDiet,
-      'thursdayExercise': thursdayDiet,
-      'fridayExercise': fridayDiet,
-      'saturdayExercise': saturdayDiet,
-      'sundayExercise': sundayDiet,
+      'mondayDiet': mondayDiet,
+      'tuesdayDiet': tuesdayDiet,
+      'wednesdayDiet': wednesdayDiet,
+      'thursdayDiet': thursdayDiet,
+      'fridayDiet': fridayDiet,
+      'saturdayDiet': saturdayDiet,
+      'sundayDiet': sundayDiet,
     });
   }
 
