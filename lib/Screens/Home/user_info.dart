@@ -13,28 +13,14 @@ class UserInfo extends StatefulWidget {
 
 class _UserInfoState extends State<UserInfo> {
   @override
-  // Widget build(BuildContext context) {
-  //   final user = Provider.of<User>(context);
-  //
-  //   return StreamBuilder<UserData>(
-  //       stream: DatabaseService(uid: user.uid).userData,
-  //       builder: (context, snapshot) {
-  //         if (snapshot.hasData) {
-  //           UserData userData = snapshot.data;
-  //           return
-  //         } else {
-  //           return Loading();
-  //         }
-  //       });
-  // }
-Widget build(BuildContext context) {
-  final info = Provider.of<List<Info>>(context) ?? [];
+  Widget build(BuildContext context) {
+    final info = Provider.of<List<Info>>(context) ?? [];
 
-  return ListView.builder(
-    itemCount: info.length,
-    itemBuilder: (context, index) {
-      return InfoTile(info: info[index]);
-    },
-  );
-}
+    return ListView.builder(
+      itemCount: info.length,
+      itemBuilder: (context, index) {
+        return InfoTile(info: info[index]);
+      },
+    );
+  }
 }

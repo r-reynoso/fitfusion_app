@@ -17,7 +17,7 @@ class DatabaseService {
   final CollectionReference userDiet =
       Firestore.instance.collection('userDiet');
 
-  Future updateUserData(String firstName, String lastName, String gender,
+  Future updateUserInfo(String firstName, String lastName, String gender,
       int age, int weight, int feet, int inches) async {
     return await userInfo.document(uid).setData({
       'firstName': firstName,

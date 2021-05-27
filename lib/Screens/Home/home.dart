@@ -19,7 +19,9 @@ class Home extends StatelessWidget {
           isScrollControlled: true,
           builder: (context) {
             return Container(
-                padding: EdgeInsets.all(30), child: SettingsForm());
+                height: 535,
+                padding: EdgeInsets.all(30),
+                child: SettingsForm());
           });
     }
 
@@ -33,7 +35,8 @@ class Home extends StatelessWidget {
             elevation: 0.0,
             actions: <Widget>[
               FlatButton.icon(
-                icon: Icon(Icons.exit_to_app, color: Color.fromARGB(255, 47, 150, 153)),
+                icon: Icon(Icons.exit_to_app,
+                    color: Color.fromARGB(255, 47, 150, 153)),
                 label: Text(''),
                 onPressed: () async {
                   asyncConfirmDialog(context);
