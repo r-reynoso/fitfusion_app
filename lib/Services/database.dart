@@ -1,10 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fitfusionapp/Models/exercise.dart';
+import 'package:fitfusionapp/Models/exerciseInfo.dart';
 import 'package:fitfusionapp/Models/userInfo.dart';
 import 'package:fitfusionapp/Models/user.dart';
 
 class DatabaseService {
-  final String uid;
 
+  final String uid;
   DatabaseService({this.uid});
 
   // collection reference
@@ -17,8 +19,14 @@ class DatabaseService {
   final CollectionReference userDiet =
       Firestore.instance.collection('userDiet');
 
-  Future updateUserInfo(String firstName, String lastName, String gender,
-      int age, int weight, int feet, int inches) async {
+  Future updateUserInfo(
+      String firstName,
+      String lastName,
+      String gender,
+      int age,
+      int weight,
+      int feet,
+      int inches) async {
     return await userInfo.document(uid).setData({
       'firstName': firstName,
       'lastName': lastName,
@@ -96,6 +104,20 @@ class DatabaseService {
     );
   }
 
+  // exerciseData from snapshot
+  ExerciseData _exerciseDataFromSnapshot(DocumentSnapshot snapshot) {
+    return ExerciseData(
+      uid: uid,
+      fridayExercise: snapshot.data['fridayExercise'],
+      mondayExercise: snapshot.data['mondayExercise'],
+      saturdayExercise: snapshot.data['saturdayExercise'],
+      sundayExercise: snapshot.data['sundayExercise'],
+      thursdayExercise: snapshot.data['thursdayExercise'],
+      tuesdayExercise: snapshot.data['tuesdayExercise'],
+      wednesdayExercise: snapshot.data['wednesdayExercise'],
+    );
+  }
+
   // get user stream
   Stream<List<Info>> get user {
     return userInfo.snapshots().map(_infoListFromSnapshot);
@@ -104,5 +126,10 @@ class DatabaseService {
   // get user doc stream
   Stream<UserData> get userData {
     return userInfo.document(uid).snapshots().map(_userDataFromSnapshot);
+  }
+
+  // get user doc stream
+  Stream<ExerciseData> get exerciseData {
+    return userExercise.document(uid).snapshots().map(_exerciseDataFromSnapshot);
   }
 }

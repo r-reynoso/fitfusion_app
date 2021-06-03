@@ -1,3 +1,4 @@
+import 'package:fitfusionapp/Models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:fitfusionapp/Models/userInfo.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -9,7 +10,7 @@ import 'package:path/path.dart';
 class InfoTile extends StatefulWidget {
   final Info info;
 
-  InfoTile({this.info});
+  InfoTile( {this.info});
 
   @override
   _InfoTileState createState() => _InfoTileState();
