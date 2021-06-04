@@ -2,28 +2,37 @@ import 'package:fitfusionapp/Models/user.dart';
 import 'package:fitfusionapp/Screens/Exercise/exercise.dart';
 import 'package:fitfusionapp/Screens/Home/settings_form.dart';
 import 'package:fitfusionapp/Shared/loading.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fitfusionapp/Services/database.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:fitfusionapp/Shared/constants.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     void _showSettingsPanel() {
       showModalBottomSheet(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
           context: context,
           isScrollControlled: true,
           builder: (context) {
             return Container(
-                height: 535,
+                height: 700,
                 padding: EdgeInsets.all(30),
                 child: SettingsForm());
           });
     }
 
-    double size = 30.0;
+    double size = 22.0;
     final user = Provider.of<User>(context);
 
     return StreamBuilder<UserData>(
@@ -34,69 +43,112 @@ class Home extends StatelessWidget {
             return Container(
                 child: Scaffold(
               backgroundColor: Colors.white,
-              appBar: AppBar(
-                title: Text(''),
-                backgroundColor: Colors.black,
-                elevation: 0.0,
-                actions: <Widget>[
-                  FlatButton.icon(
-                    icon: Icon(Icons.exit_to_app,
-                        color: Color.fromARGB(255, 47, 150, 153)),
-                    label: Text(''),
-                    onPressed: () async {
-                      asyncConfirmDialog(context);
-                    },
-                  )
-                ],
+              appBar: PreferredSize(
+                preferredSize: Size.fromHeight(100),
+                child: Container(
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(
+                        0, 0, 0, 0),
+                    child: AppBar(
+                      centerTitle: true,
+                      leading: Padding(
+                        padding: EdgeInsets.fromLTRB(
+                            30, 0, 0, 0),
+                        child: Icon(
+                          Icons.settings,
+                          size: 30,
+                          color: Color.fromARGB(255, 47, 150, 153),
+                        ),
+                      ),
+                      title: Text(
+                        userData.firstName + ' ' + userData.lastName,
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontSize: size,
+                            fontWeight: FontWeight.normal),
+                      ),
+                      backgroundColor: Colors.black,
+                      elevation: 0.0,
+                      actions: <Widget>[
+                        FlatButton.icon(
+                          icon: Icon(Icons.exit_to_app,
+                              size: 30, color: Color.fromARGB(255, 47, 150, 153)),
+                          label: Text(''),
+                          onPressed: () async {
+                            asyncConfirmDialog(context);
+                          },
+                        )
+                      ],
+                    ),
+                  ),
+                ),
               ),
 
               body: Center(
-                child: Column(
+                  child: Column(
                 children: <Widget>[
-                  SizedBox(height: 100.0),
-                  Row(
-                    children: <Widget>[
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(30.0, 10.0, 5.0, 10.0),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            'Name:',
-                            style: TextStyle(
-                                fontSize: size, fontWeight: FontWeight.normal),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(5.0, 10.0, 5.0, 10.0),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Container(
-                            child: Text(
-                                userData.firstName,
-                                style: TextStyle(
-                                    fontSize: size, fontWeight: FontWeight.normal
+                  SizedBox(height: 40),
+                  SizedBox(
+                    width: 390,
+                    child: Container(
+                      height: 150,
+                      child: Card(
+                        elevation: 10,
+                        child: Column(
+                          children: <Widget>[
+                            SizedBox(height: 50.0),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(
+                                      30.0, 10.0, 5.0, 10.0),
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      'Name:',
+                                      style: TextStyle(
+                                          fontSize: size,
+                                          fontWeight: FontWeight.normal),
+                                    ),
+                                  ),
                                 ),
-                            ),
-                          ),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.fromLTRB(5.0, 10.0, 5.0, 10.0),
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Container(
+                                      child: Text(
+                                        userData.firstName,
+                                        style: TextStyle(
+                                            fontSize: size,
+                                            fontWeight: FontWeight.normal),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.fromLTRB(5.0, 10.0, 5.0, 10.0),
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Container(
+                                      child: Text(
+                                        userData.lastName,
+                                        style: TextStyle(
+                                            fontSize: size,
+                                            fontWeight: FontWeight.normal),
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(5.0, 10.0, 5.0, 10.0),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Container(
-                            child: Text(
-                              userData.lastName,
-                              style: TextStyle(
-                                  fontSize: size, fontWeight: FontWeight.normal
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  )
+                    ),
+                  ),
                 ],
               )),
 
