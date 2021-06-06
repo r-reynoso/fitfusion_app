@@ -25,7 +25,9 @@ class _ExerciseState extends State<Exercise> {
                   child: Scaffold(
                     backgroundColor: Colors.white,
                     appBar: AppBar(
-                      title: Text('Exercise'),
+                      iconTheme: IconThemeData(
+                        color: Color.fromARGB(255, 47, 150, 153),
+                      ),
                       backgroundColor: Colors.black,
                       elevation: 0.0,
                     ),
