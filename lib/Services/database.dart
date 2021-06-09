@@ -20,6 +20,7 @@ class DatabaseService {
       Firestore.instance.collection('userDiet');
 
   Future updateUserInfo(
+      String email,
       String firstName,
       String lastName,
       String gender,
@@ -28,6 +29,7 @@ class DatabaseService {
       int feet,
       int inches) async {
     return await userInfo.document(uid).setData({
+      'email': email,
       'firstName': firstName,
       'lastName': lastName,
       'gender': gender,
@@ -39,7 +41,16 @@ class DatabaseService {
   }
 
   Future updateUserExercise(
-      String mondayExercise,
+      String mondayExercise1,
+      String mondayExercise2,
+      String mondayExercise3,
+      String mondayExercise4,
+      String mondayExercise5,
+      String mondayExercise6,
+      String mondayExercise7,
+      String mondayExercise8,
+      String mondayExercise9,
+      String mondayExercise10,
       String tuesdayExercise,
       String wednesdayExercise,
       String thursdayExercise,
@@ -47,7 +58,16 @@ class DatabaseService {
       String saturdayExercise,
       String sundayExercise) async {
     return await userExercise.document(uid).setData({
-      'mondayExercise': mondayExercise,
+      'mondayExercise1': mondayExercise1,
+      'mondayExercise2': mondayExercise2,
+      'mondayExercise3': mondayExercise3,
+      'mondayExercise4': mondayExercise4,
+      'mondayExercise5': mondayExercise5,
+      'mondayExercise6': mondayExercise6,
+      'mondayExercise7': mondayExercise7,
+      'mondayExercise8': mondayExercise8,
+      'mondayExercise9': mondayExercise9,
+      'mondayExercise10': mondayExercise10,
       'tuesdayExercise': tuesdayExercise,
       'wednesdayExercise': wednesdayExercise,
       'thursdayExercise': thursdayExercise,
@@ -94,6 +114,7 @@ class DatabaseService {
   UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
     return UserData(
       uid: uid,
+      email: snapshot.data['email'],
       firstName: snapshot.data['firstName'],
       lastName: snapshot.data['lastName'],
       age: snapshot.data['age'],
@@ -109,7 +130,16 @@ class DatabaseService {
     return ExerciseData(
       uid: uid,
       fridayExercise: snapshot.data['fridayExercise'],
-      mondayExercise: snapshot.data['mondayExercise'],
+      mondayExercise1: snapshot.data['mondayExercise1'],
+      mondayExercise2: snapshot.data['mondayExercise2'],
+      mondayExercise3: snapshot.data['mondayExercise3'],
+      mondayExercise4: snapshot.data['mondayExercise4'],
+      mondayExercise5: snapshot.data['mondayExercise5'],
+      mondayExercise6: snapshot.data['mondayExercise6'],
+      mondayExercise7: snapshot.data['mondayExercise7'],
+      mondayExercise8: snapshot.data['mondayExercise8'],
+      mondayExercise9: snapshot.data['mondayExercise9'],
+      mondayExercise10: snapshot.data['mondayExercise10'],
       saturdayExercise: snapshot.data['saturdayExercise'],
       sundayExercise: snapshot.data['sundayExercise'],
       thursdayExercise: snapshot.data['thursdayExercise'],

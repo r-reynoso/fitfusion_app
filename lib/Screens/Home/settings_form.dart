@@ -21,6 +21,7 @@ class _SettingsFormState extends State<SettingsForm> {
   final List gender = ['Male','Female'];
 
   // form values
+  String _currentEmail;
   String _currentFirstName;
   String _currentLastName;
   String _currentGender;
@@ -100,6 +101,27 @@ class _SettingsFormState extends State<SettingsForm> {
                     onChanged: (val) => setState(() => _currentLastName = val),
                   ),
                   SizedBox(height: 10.0),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      child: Text(
+                        'Enter your email.',
+                        style: TextStyle(
+                            fontSize: 10.0, fontWeight: FontWeight.normal),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  TextFormField(
+                    initialValue: userData.email,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: textInputDecoration.copyWith(
+                        labelText: 'Email',
+                        labelStyle: TextStyle(color: Colors.black)),
+                    validator: (val) =>
+                    val.isEmpty ? 'Please enter your email.' : null,
+                    onChanged: (val) => setState(() => _currentEmail = val),
+                  ),
                   Row(
                     children: <Widget>[
                       Align(
@@ -246,6 +268,7 @@ class _SettingsFormState extends State<SettingsForm> {
                         onPressed: () async {
                           if (_formKey.currentState.validate()) {
                             await DatabaseService(uid: user.uid).updateUserInfo(
+                              _currentEmail ?? userData.email,
                               _currentFirstName ?? userData.firstName,
                               _currentLastName ?? userData.lastName,
                               _currentGender ?? userData.gender,

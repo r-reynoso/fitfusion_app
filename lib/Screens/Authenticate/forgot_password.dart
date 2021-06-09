@@ -1,30 +1,22 @@
-import 'package:fitfusionapp/Services/auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitfusionapp/Shared/loading.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fitfusionapp/Shared/constants.dart';
-import 'package:fitfusionapp/Screens/Webview/Webview.dart';
+import '../../main.dart';
 
-Future navigateToWebwiew(context) async {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => Webwiew()));
-}
-
-class Register extends StatefulWidget {
-  final Function toggleView;
-
-  Register({this.toggleView});
-
+class ForgotPassword extends StatefulWidget {
   @override
-  _RegisterState createState() => _RegisterState();
+  _ForgotPasswordState createState() => _ForgotPasswordState();
 }
 
-class _RegisterState extends State<Register> {
-  final AuthService _auth = AuthService();
+class _ForgotPasswordState extends State<ForgotPassword> {
   final _formKey = GlobalKey<FormState>();
+  final _auth = FirebaseAuth.instance;
   bool loading = false;
 
   // text field state
-  String email = '';
-  String password = '';
+  String email;
   String error = '';
 
   @override
@@ -40,13 +32,13 @@ class _RegisterState extends State<Register> {
                 backgroundColor: Colors.white,
                 elevation: 0.0,
                 actions: <Widget>[
-                  FlatButton.icon(
-                    icon: Icon(Icons.help, color: Color.fromARGB(255, 47, 150, 153)),
-                    label: Text(''),
-                    onPressed: () {
-                      navigateToWebwiew(context);
-                    },
-                  )
+                  // FlatButton.icon(
+                  //   icon: Icon(Icons.help, color: Color.fromARGB(255, 47, 150, 153)),
+                  //   label: Text(''),
+                  //   onPressed: () {
+                  //     navigateToWebwiew(context);
+                  //   },
+                  // )
                 ],
               ),
               body: SingleChildScrollView(
@@ -59,7 +51,8 @@ class _RegisterState extends State<Register> {
                         child: SizedBox(
                           width: 190,
                           height: 190,
-                          child: Image.asset('assets/images/logoSmallWhite.png'),
+                          child:
+                              Image.asset('assets/images/logoSmallWhite.png'),
                         ),
                       ),
                       SizedBox(height: 45.0),
@@ -67,9 +60,9 @@ class _RegisterState extends State<Register> {
                         alignment: Alignment.centerLeft,
                         child: Container(
                           child: Text(
-                            'Register',
+                            'Forgot Password?',
                             style: TextStyle(
-                                fontSize: 40.0, fontWeight: FontWeight.normal),
+                                fontSize: 30.0, fontWeight: FontWeight.normal),
                           ),
                         ),
                       ),
@@ -91,34 +84,23 @@ class _RegisterState extends State<Register> {
                         decoration: textInputDecoration.copyWith(
                             labelText: 'Enter email',
                             labelStyle: TextStyle(color: Colors.black)),
-                        validator: (val) => val.isEmpty ? 'Enter a email.' : null,
+                        validator: (val) =>
+                            val.isEmpty ? 'Enter a email.' : null,
                         onChanged: (val) {
                           setState(() => email = val);
                         },
                       ),
-                      SizedBox(height: 10.0),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Container(
-                          child: Text(
-                            'Password',
-                            style: TextStyle(
-                                fontSize: 20.0, fontWeight: FontWeight.normal),
-                          ),
-                        ),
+                      SizedBox(height: 30.0),
+                      Row(
+                        children: <Widget>[
+                            Text(
+                              'You will receive a reset password email.',
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 47, 150, 153),
+                                  fontSize: 18.0),
+                            ),
+                        ],
                       ),
-                      SizedBox(height: 10.0),
-                      TextFormField(
-                          autofocus: false,
-                          decoration: textInputDecoration.copyWith(
-                              labelText: 'Enter password',
-                              labelStyle: TextStyle(color: Colors.black)),
-                          validator: (val) =>
-                              val.length < 6 ? 'Minimum 6 char long.' : null,
-                          obscureText: true,
-                          onChanged: (val) {
-                            setState(() => password = val);
-                          }),
                       SizedBox(height: 30.0),
                       ButtonTheme(
                         minWidth: double.infinity,
@@ -128,20 +110,18 @@ class _RegisterState extends State<Register> {
                         child: RaisedButton(
                           color: Color.fromARGB(255, 47, 150, 153),
                           child: Text(
-                            'Register',
+                            'Rest Password',
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
-                          onPressed: () async {
-                            if (_formKey.currentState.validate()) {
-                              setState(() => loading = true);
-                              dynamic results = await _auth
-                                  .registerWithEmailAndPassword(email, password);
-                              if (results != null) {
-                                setState(() {
-                                  error = results;
-                                  loading = false;
-                                });
-                              }
+                          onPressed: () {
+                            if (email != null) {
+                              _auth.sendPasswordResetEmail(email: email);
+                              Navigator.of(context).pop();
+                            } else {
+                              setState(() {
+                                error = 'Please enter a email.';
+                                loading = false;
+                              });
                             }
                           },
                         ),
@@ -159,7 +139,10 @@ class _RegisterState extends State<Register> {
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                           onPressed: () async {
-                            widget.toggleView();
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MyApp()));
                           },
                         ),
                       ),

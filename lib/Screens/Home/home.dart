@@ -25,13 +25,13 @@ class _HomeState extends State<Home> {
     void _showSettingsPanel() {
       showModalBottomSheet(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.0),
+            borderRadius: BorderRadius.circular(10.0),
           ),
           context: context,
           isScrollControlled: true,
           builder: (context) {
             return Container(
-                height: 700,
+                height: 725,
                 padding: EdgeInsets.all(30),
                 child: SettingsForm());
           });
@@ -47,7 +47,7 @@ class _HomeState extends State<Home> {
             final feet = userData.feet;
             final inches = userData.inches;
             final weight = userData.weight;
-            final bmi = (weight/(pow(((feet*12)+inches),2)))*703;
+            final bmi = (weight / (pow(((feet * 12) + inches), 2))) * 703;
             return Container(
                 child: Scaffold(
               key: scaffoldKey,
@@ -61,11 +61,11 @@ class _HomeState extends State<Home> {
                       centerTitle: true,
                       leading: Padding(
                         padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
-                        child: Icon(
-                          Icons.settings,
-                          size: 30,
-                          color: Color.fromARGB(255, 47, 150, 153),
-                        ),
+                        // child: Icon(
+                        //   Icons.settings,
+                        //   size: 30,
+                        //   color: Color.fromARGB(255, 47, 150, 153),
+                        // ),
                       ),
                       backgroundColor: Colors.black,
                       elevation: 0.0,
@@ -87,16 +87,16 @@ class _HomeState extends State<Home> {
 
               body: Center(
                   child: Align(
-                alignment: Alignment(0, -0.9),
                 child: SingleChildScrollView(
                   child: Column(
                     children: <Widget>[
+                      //Personal Data ------------------------------------------
                       SizedBox(
-                        width: 390,
+                        width: 380,
                         child: Container(
-                          height: 370,
+                          height: 395,
                           child: Card(
-                            elevation: 1,
+                            elevation: 5,
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
@@ -125,7 +125,7 @@ class _HomeState extends State<Home> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
                                     const SizedBox(width: 0),
-                                    Text('r-reynoso@live.com'),
+                                    Text(userData.email),
                                   ],
                                 ),
                                 const ListTile(
@@ -181,17 +181,17 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       ),
-                      //-------------------------------------------------------
+                      // BMI -------------------------------------------------------
                       SizedBox(
-                        width: 390,
+                        width: 380,
                         child: Container(
-                          height: 320,
+                          height: 275,
                           child: Card(
-                            elevation: 1,
+                            elevation: 5,
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
-                                SizedBox(height: 10),
+                                SizedBox(height: 0),
                                 const ListTile(
                                   leading: Icon(Icons.info),
                                   title: Text('Body Mass Index'),
@@ -270,7 +270,15 @@ class _HomeState extends State<Home> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text('Your body mass index is:  ' + bmi.toStringAsFixed(2) + '.'),
+                                    if (bmi.toStringAsFixed(2) == 'Infinity' ||
+                                        bmi.toStringAsFixed(2) == 'NaN')
+                                      Text(
+                                          'Enter your weight, feet and inches.'),
+                                    if (bmi.toStringAsFixed(2) != 'Infinity' &&
+                                        bmi.toStringAsFixed(2) != 'NaN')
+                                      Text('Your body mass index is:  ' +
+                                          bmi.toStringAsFixed(2) +
+                                          '.'),
                                   ],
                                 ),
                               ],
