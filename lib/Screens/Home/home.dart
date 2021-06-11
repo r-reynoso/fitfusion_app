@@ -1,5 +1,5 @@
 import 'package:fitfusionapp/Models/user.dart';
-import 'package:fitfusionapp/Screens/Exercise/exercise.dart';
+import 'package:fitfusionapp/Screens/Exercise/days.dart';
 import 'package:fitfusionapp/Screens/Home/settings_form.dart';
 import 'package:fitfusionapp/Shared/loading.dart';
 import 'package:flutter/cupertino.dart';
@@ -153,7 +153,7 @@ class _HomeState extends State<Home> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Exercise()),
+                                      builder: (context) => Days()),
                                 );
                               },
                             ),
@@ -172,7 +172,7 @@ class _HomeState extends State<Home> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Exercise()),
+                                      builder: (context) => Days()),
                                 );
                               },
                             ),
@@ -477,7 +477,7 @@ class _HomeState extends State<Home> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Exercise()),
+                                      builder: (context) => Days()),
                                 );
                               },
                             ),
@@ -496,7 +496,7 @@ class _HomeState extends State<Home> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Exercise()),
+                                      builder: (context) => Days()),
                                 );
                               },
                             ),
