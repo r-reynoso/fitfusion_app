@@ -14,10 +14,13 @@ class MyApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
-    return StreamProvider<User>.value(
-        value: AuthService().user,
-        child: MaterialApp(
-          home: Wrapper(),
-        ));
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: StreamProvider<User>.value(
+          value: AuthService().user,
+          child: MaterialApp(
+            home: Wrapper(),
+          )),
+    );
   }
 }

@@ -71,6 +71,7 @@ class _SettingsFormState extends State<SettingsForm> {
                   ),
                   SizedBox(height: 10.0),
                   TextFormField(
+                    inputFormatters: [LengthLimitingTextInputFormatter(10), BlacklistingTextInputFormatter(RegExp(r"\s\b|\b\s"))],
                     initialValue: userData.firstName,
                     decoration: textInputDecoration.copyWith(
                         labelText: 'First name',
@@ -92,6 +93,7 @@ class _SettingsFormState extends State<SettingsForm> {
                   ),
                   SizedBox(height: 10.0),
                   TextFormField(
+                    inputFormatters: [LengthLimitingTextInputFormatter(10), BlacklistingTextInputFormatter(RegExp(r"\s\b|\b\s"))],
                     initialValue: userData.lastName,
                     decoration: textInputDecoration.copyWith(
                         labelText: 'Last name',
@@ -113,6 +115,7 @@ class _SettingsFormState extends State<SettingsForm> {
                   ),
                   SizedBox(height: 10.0),
                   TextFormField(
+                    inputFormatters: [LengthLimitingTextInputFormatter(30), BlacklistingTextInputFormatter(RegExp(r"\s\b|\b\s"))],
                     initialValue: userData.email,
                     keyboardType: TextInputType.emailAddress,
                     decoration: textInputDecoration.copyWith(

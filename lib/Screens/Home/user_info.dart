@@ -1,6 +1,3 @@
-import 'package:fitfusionapp/Models/user.dart';
-import 'package:fitfusionapp/Services/database.dart';
-import 'package:fitfusionapp/Shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:fitfusionapp/Models/userInfo.dart';
