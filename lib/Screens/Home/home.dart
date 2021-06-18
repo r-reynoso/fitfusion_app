@@ -8,7 +8,6 @@ import 'package:fitfusionapp/Services/database.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:fitfusionapp/Shared/constants.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'dart:math';
 
 class Home extends StatefulWidget {
@@ -19,7 +18,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -122,15 +120,8 @@ class _HomeState extends State<Home> {
                                     leading: Icon(Icons.account_circle),
                                     title:
                                         Text('Welcome to FitFusion app!'),
-                                    subtitle: Text('We are thrilled to have you as a member!')
-                                  ),
-                                  Center(
-                                    child: ScaleAnimatedTextKit(
-                                      text: ['To start using FitFusion app, you will need to fill out all of your personal information in the User Settings below.'],
-                                      textAlign: TextAlign.center,
-                                      duration: Duration(microseconds: 5000000),
-                                      textStyle: TextStyle(fontSize: 13),
-                                    ),
+                                    subtitle: Text(
+                                        'To start using FitFusion app, you will need to fill out all of your personal information in the User Settings below.'),
                                   ),
                                 ],
                               ),
