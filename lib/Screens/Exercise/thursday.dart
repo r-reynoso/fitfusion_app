@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:fitfusionapp/Services/database.dart';
 import 'package:provider/provider.dart';
 
-class Monday extends StatefulWidget {
+class Thursday extends StatefulWidget {
   @override
-  _MondayState createState() => _MondayState();
+  _ThursdayState createState() => _ThursdayState();
 }
 
-class _MondayState extends State<Monday> {
+class _ThursdayState extends State<Thursday> {
   double size = 20.0;
 
   @override
@@ -36,7 +36,7 @@ class _MondayState extends State<Monday> {
                 child: SingleChildScrollView(
                   child: Column(
                     children: <Widget>[
-                      // Monday -------------------------------------------------------
+                      // Thursday -------------------------------------------------------
                       SizedBox(height: 20),
                       SizedBox(
                         width: 380,
@@ -50,14 +50,14 @@ class _MondayState extends State<Monday> {
                                 SizedBox(height: 0),
                                 const ListTile(
                                   leading: Icon(Icons.calendar_today),
-                                  title: Text('Monday'),
+                                  title: Text('Thursday'),
                                   subtitle: Text('Cardio'),
                                 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise1),
+                                    Text(exerciseData.thursdayExercise1),
                                   ],
                                 ),
                                 Row(
@@ -77,7 +77,7 @@ class _MondayState extends State<Monday> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise2),
+                                    Text(exerciseData.thursdayExercise2),
                                   ],
                                 ),
                                 SizedBox(height: 5),
@@ -85,7 +85,7 @@ class _MondayState extends State<Monday> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise3),
+                                    Text(exerciseData.thursdayExercise3),
                                   ],
                                 ),
                                 SizedBox(height: 5),
@@ -93,7 +93,7 @@ class _MondayState extends State<Monday> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise4),
+                                    Text(exerciseData.thursdayExercise4),
                                   ],
                                 ),
                                 SizedBox(height: 5),
@@ -101,7 +101,7 @@ class _MondayState extends State<Monday> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise5),
+                                    Text(exerciseData.thursdayExercise5),
                                   ],
                                 ),
                                 SizedBox(height: 5),
@@ -109,7 +109,7 @@ class _MondayState extends State<Monday> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise6),
+                                    Text(exerciseData.thursdayExercise6),
                                   ],
                                 ),
                                 SizedBox(height: 10),
@@ -134,7 +134,7 @@ class _MondayState extends State<Monday> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise7),
+                                    Text(exerciseData.thursdayExercise7),
                                   ],
                                 ),
                                 SizedBox(height: 5),
@@ -142,7 +142,7 @@ class _MondayState extends State<Monday> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise8),
+                                    Text(exerciseData.thursdayExercise8),
                                   ],
                                 ),
                                 SizedBox(height: 5),
@@ -150,7 +150,7 @@ class _MondayState extends State<Monday> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise9),
+                                    Text(exerciseData.thursdayExercise9),
                                   ],
                                 ),
                                 SizedBox(height: 5),
@@ -158,7 +158,7 @@ class _MondayState extends State<Monday> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise10),
+                                    Text(exerciseData.thursdayExercise10),
                                   ],
                                 ),
                                 SizedBox(height: 5),
@@ -166,7 +166,7 @@ class _MondayState extends State<Monday> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise11),
+                                    Text(exerciseData.thursdayExercise11),
                                   ],
                                 ),
                                 SizedBox(height: 10),
@@ -191,7 +191,7 @@ class _MondayState extends State<Monday> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise12),
+                                    Text(exerciseData.thursdayExercise12),
                                   ],
                                 ),
                                 SizedBox(height: 5),
@@ -199,7 +199,7 @@ class _MondayState extends State<Monday> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise13),
+                                    Text(exerciseData.thursdayExercise13),
                                   ],
                                 ),
                                 SizedBox(height: 5),
@@ -207,7 +207,7 @@ class _MondayState extends State<Monday> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise14),
+                                    Text(exerciseData.thursdayExercise14),
                                   ],
                                 ),
                                 SizedBox(height: 5),
@@ -215,7 +215,7 @@ class _MondayState extends State<Monday> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise15),
+                                    Text(exerciseData.thursdayExercise15),
                                   ],
                                 ),
                                 SizedBox(height: 5),
@@ -223,7 +223,7 @@ class _MondayState extends State<Monday> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     const SizedBox(width: 72),
-                                    Text(exerciseData.mondayExercise16),
+                                    Text(exerciseData.thursdayExercise16),
                                   ],
                                 ),
                                 SizedBox(height: 10),

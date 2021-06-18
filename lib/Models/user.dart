@@ -1,6 +1,5 @@
 class User {
   final String uid;
-
   User({this.uid});
 }
 
@@ -39,6 +38,12 @@ class ExerciseData {
   final String fridayExercise8;
   final String fridayExercise9;
   final String fridayExercise10;
+  final String fridayExercise11;
+  final String fridayExercise12;
+  final String fridayExercise13;
+  final String fridayExercise14;
+  final String fridayExercise15;
+  final String fridayExercise16;
 
   final String mondayExercise1;
   final String mondayExercise2;
@@ -50,6 +55,12 @@ class ExerciseData {
   final String mondayExercise8;
   final String mondayExercise9;
   final String mondayExercise10;
+  final String mondayExercise11;
+  final String mondayExercise12;
+  final String mondayExercise13;
+  final String mondayExercise14;
+  final String mondayExercise15;
+  final String mondayExercise16;
 
   final String saturdayExercise1;
   final String saturdayExercise2;
@@ -61,6 +72,12 @@ class ExerciseData {
   final String saturdayExercise8;
   final String saturdayExercise9;
   final String saturdayExercise10;
+  final String saturdayExercise11;
+  final String saturdayExercise12;
+  final String saturdayExercise13;
+  final String saturdayExercise14;
+  final String saturdayExercise15;
+  final String saturdayExercise16;
 
   final String sundayExercise1;
   final String sundayExercise2;
@@ -72,6 +89,12 @@ class ExerciseData {
   final String sundayExercise8;
   final String sundayExercise9;
   final String sundayExercise10;
+  final String sundayExercise11;
+  final String sundayExercise12;
+  final String sundayExercise13;
+  final String sundayExercise14;
+  final String sundayExercise15;
+  final String sundayExercise16;
 
   final String thursdayExercise1;
   final String thursdayExercise2;
@@ -83,6 +106,12 @@ class ExerciseData {
   final String thursdayExercise8;
   final String thursdayExercise9;
   final String thursdayExercise10;
+  final String thursdayExercise11;
+  final String thursdayExercise12;
+  final String thursdayExercise13;
+  final String thursdayExercise14;
+  final String thursdayExercise15;
+  final String thursdayExercise16;
 
   final String tuesdayExercise1;
   final String tuesdayExercise2;
@@ -94,6 +123,12 @@ class ExerciseData {
   final String tuesdayExercise8;
   final String tuesdayExercise9;
   final String tuesdayExercise10;
+  final String tuesdayExercise11;
+  final String tuesdayExercise12;
+  final String tuesdayExercise13;
+  final String tuesdayExercise14;
+  final String tuesdayExercise15;
+  final String tuesdayExercise16;
 
   final String wednesdayExercise1;
   final String wednesdayExercise2;
@@ -105,7 +140,12 @@ class ExerciseData {
   final String wednesdayExercise8;
   final String wednesdayExercise9;
   final String wednesdayExercise10;
-
+  final String wednesdayExercise11;
+  final String wednesdayExercise12;
+  final String wednesdayExercise13;
+  final String wednesdayExercise14;
+  final String wednesdayExercise15;
+  final String wednesdayExercise16;
 
   ExerciseData(
       {this.uid,
@@ -119,6 +159,12 @@ class ExerciseData {
         this.fridayExercise8,
         this.fridayExercise9,
         this.fridayExercise10,
+        this.fridayExercise11,
+        this.fridayExercise12,
+        this.fridayExercise13,
+        this.fridayExercise14,
+        this.fridayExercise15,
+        this.fridayExercise16,
 
         this.mondayExercise1,
         this.mondayExercise2,
@@ -130,6 +176,12 @@ class ExerciseData {
         this.mondayExercise8,
         this.mondayExercise9,
         this.mondayExercise10,
+        this.mondayExercise11,
+        this.mondayExercise12,
+        this.mondayExercise13,
+        this.mondayExercise14,
+        this.mondayExercise15,
+        this.mondayExercise16,
 
         this.saturdayExercise1,
         this.saturdayExercise2,
@@ -141,6 +193,12 @@ class ExerciseData {
         this.saturdayExercise8,
         this.saturdayExercise9,
         this.saturdayExercise10,
+        this.saturdayExercise11,
+        this.saturdayExercise12,
+        this.saturdayExercise13,
+        this.saturdayExercise14,
+        this.saturdayExercise15,
+        this.saturdayExercise16,
 
         this.sundayExercise1,
         this.sundayExercise2,
@@ -152,6 +210,12 @@ class ExerciseData {
         this.sundayExercise8,
         this.sundayExercise9,
         this.sundayExercise10,
+        this.sundayExercise11,
+        this.sundayExercise12,
+        this.sundayExercise13,
+        this.sundayExercise14,
+        this.sundayExercise15,
+        this.sundayExercise16,
 
         this.thursdayExercise1,
         this.thursdayExercise2,
@@ -163,6 +227,12 @@ class ExerciseData {
         this.thursdayExercise8,
         this.thursdayExercise9,
         this.thursdayExercise10,
+        this.thursdayExercise11,
+        this.thursdayExercise12,
+        this.thursdayExercise13,
+        this.thursdayExercise14,
+        this.thursdayExercise15,
+        this.thursdayExercise16,
 
         this.tuesdayExercise1,
         this.tuesdayExercise2,
@@ -174,6 +244,12 @@ class ExerciseData {
         this.tuesdayExercise8,
         this.tuesdayExercise9,
         this.tuesdayExercise10,
+        this.tuesdayExercise11,
+        this.tuesdayExercise12,
+        this.tuesdayExercise13,
+        this.tuesdayExercise14,
+        this.tuesdayExercise15,
+        this.tuesdayExercise16,
 
         this.wednesdayExercise1,
         this.wednesdayExercise2,
@@ -184,5 +260,11 @@ class ExerciseData {
         this.wednesdayExercise7,
         this.wednesdayExercise8,
         this.wednesdayExercise9,
-        this.wednesdayExercise10});
+        this.wednesdayExercise10,
+        this.wednesdayExercise11,
+        this.wednesdayExercise12,
+        this.wednesdayExercise13,
+        this.wednesdayExercise14,
+        this.wednesdayExercise15,
+        this.wednesdayExercise16});
 }
