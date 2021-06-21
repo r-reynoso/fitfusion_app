@@ -41,9 +41,9 @@ class _SaturdayState extends State<Saturday> {
                               SizedBox(
                                 width: 380,
                                 child: Container(
-                                  height: 750,
+                                  height: 700,
                                   child: Card(
-                                    elevation: 2,
+                                    elevation: 5,
                                     child: SingleChildScrollView(
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
