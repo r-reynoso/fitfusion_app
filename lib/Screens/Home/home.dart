@@ -1,4 +1,5 @@
 import 'package:fitfusionapp/Models/user.dart';
+import 'package:fitfusionapp/Screens/Diet/days.dart';
 import 'package:fitfusionapp/Screens/Exercise/days.dart';
 import 'package:fitfusionapp/Screens/Home/settings_form.dart';
 import 'package:fitfusionapp/Shared/loading.dart';
@@ -76,7 +77,6 @@ class _HomeState extends State<Home> {
                                 // ),
                               ),
                               backgroundColor: Colors.black,
-                              elevation: 0.0,
                               actions: <Widget>[
                                 FlatButton.icon(
                                   icon: Icon(Icons.exit_to_app,
@@ -103,7 +103,7 @@ class _HomeState extends State<Home> {
                                   child: Container(
                                     height: 290,
                                     child: Card(
-                                      elevation: 2,
+                                      elevation: 0,
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         children: <Widget>[
@@ -141,7 +141,6 @@ class _HomeState extends State<Home> {
                             ),
                           )),
                       bottomNavigationBar: BottomAppBar(
-                        elevation: 5,
                         shape: const CircularNotchedRectangle(),
                         child: Container(
                           height: 60,
@@ -181,7 +180,7 @@ class _HomeState extends State<Home> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Days()),
+                                          builder: (context) => DaysDiet()),
                                     );
                                   },
                                 ),
@@ -223,7 +222,6 @@ class _HomeState extends State<Home> {
                                 // ),
                               ),
                               backgroundColor: Colors.black,
-                              elevation: 0.0,
                               actions: <Widget>[
                                 FlatButton.icon(
                                   icon: Icon(Icons.exit_to_app,
@@ -251,7 +249,7 @@ class _HomeState extends State<Home> {
                                     child: Container(
                                       height: 395,
                                       child: Card(
-                                        elevation: 2,
+                                        elevation: 0,
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           children: <Widget>[
@@ -286,7 +284,7 @@ class _HomeState extends State<Home> {
                                               ],
                                             ),
                                             const ListTile(
-                                              leading: Icon(Icons.album),
+                                              leading: Icon(Icons.account_circle),
                                               title:
                                               Text('Your Personal Physical Data'),
                                               subtitle: Text(
@@ -349,7 +347,7 @@ class _HomeState extends State<Home> {
                                     child: Container(
                                       height: 275,
                                       child: Card(
-                                        elevation: 2,
+                                        elevation: 5,
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           children: <Widget>[
@@ -465,7 +463,6 @@ class _HomeState extends State<Home> {
                           )),
 
                       bottomNavigationBar: BottomAppBar(
-                        elevation: 5,
                         shape: const CircularNotchedRectangle(),
                         child: Container(
                           height: 60,
@@ -505,7 +502,7 @@ class _HomeState extends State<Home> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Days()),
+                                          builder: (context) => DaysDiet()),
                                     );
                                   },
                                 ),

@@ -63,3 +63,23 @@ Future<ConfirmAction> asyncConfirmDialog1(BuildContext context) async {
     },
   );
 }
+
+Future<ConfirmAction> asyncConfirmDialog2(BuildContext context) async {
+  return showDialog<ConfirmAction>(
+    context: context,
+    barrierDismissible: false, // user must tap button for close dialog!
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('No diet prepared for this day.', style: TextStyle(color: Colors.black)),
+        content: const Text('If any question, please ask your nutritionist.',
+            style: TextStyle(color: Color.fromARGB(255, 47, 150, 153))),
+        actions: <Widget>[
+          FlatButton(
+              child: const Text('OK', style: TextStyle(color: Colors.black)),
+              onPressed: () => Navigator.pop(context)
+          ),
+        ],
+      );
+    },
+  );
+}

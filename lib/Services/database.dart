@@ -315,6 +315,20 @@ class DatabaseService {
     );
   }
 
+  // userData from snapshot
+  DietData _dietDataFromSnapshot(DocumentSnapshot snapshot) {
+    return DietData(
+      uid: uid,
+      mondayDiet: snapshot.data['mondayDiet'],
+      tuesdayDiet: snapshot.data['tuesdayDiet'],
+      wednesdayDiet: snapshot.data['wednesdayDiet'],
+      thursdayDiet: snapshot.data['thursdayDiet'],
+      fridayDiet: snapshot.data['fridayDiet'],
+      saturdayDiet: snapshot.data['saturdayDiet'],
+      sundayDiet: snapshot.data['sundayDiet'],
+    );
+  }
+
   // exerciseData from snapshot
   ExerciseData _exerciseDataFromSnapshot(DocumentSnapshot snapshot) {
     return ExerciseData(
@@ -447,5 +461,10 @@ class DatabaseService {
   // get user doc stream
   Stream<ExerciseData> get exerciseData {
     return userExercise.document(uid).snapshots().map(_exerciseDataFromSnapshot);
+  }
+
+  // get user doc stream
+  Stream<DietData> get dietData {
+    return userDiet.document(uid).snapshots().map(_dietDataFromSnapshot);
   }
 }

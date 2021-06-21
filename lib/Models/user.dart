@@ -26,6 +26,28 @@ class UserData {
       this.inches});
 }
 
+class DietData {
+  final String uid;
+  final String mondayDiet;
+  final String tuesdayDiet;
+  final String wednesdayDiet;
+  final String thursdayDiet;
+  final String fridayDiet;
+  final String saturdayDiet;
+  final String sundayDiet;
+
+  DietData({
+    this.uid,
+    this.mondayDiet,
+    this.tuesdayDiet,
+    this.wednesdayDiet,
+    this.thursdayDiet,
+    this.fridayDiet,
+    this.saturdayDiet,
+    this.sundayDiet,
+  });
+}
+
 class ExerciseData {
   final String uid;
   final String fridayExercise1;
